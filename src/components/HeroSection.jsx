@@ -20,8 +20,8 @@ export default function HeroSection({ onContactClick }) {
           
           {/* Top Pill Badge */}
           <div className="mb-6 flex flex-wrap items-center justify-center gap-2 px-2">
-            <Badge variant="yellow">PRACTICAL AI FOR GROWTH</Badge>
-            <span className="font-mono text-xs text-kt-slate hidden sm:inline-block">| No generic wrappers. No enterprise bloat.</span>
+            <Badge variant="yellow">WE BUILD BETTER WEBSITES</Badge>
+            <span className="font-mono text-xs text-kt-slate hidden sm:inline-block">| Beautiful design. Built to perform.</span>
           </div>
 
           {/* Main Headline */}
