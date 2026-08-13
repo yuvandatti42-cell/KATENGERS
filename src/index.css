@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --kt-yellow: #FFC300;
+  --kt-orange: #FF732E;
+  --kt-ink: #1A1D1D;
+  --kt-white: #FFFFFF;
+  --kt-slate: #5B5F5F;
+  --kt-fog: #E8E8E6;
+  --kt-cream: #FFF8EA;
+  --kt-success: #2E9E5B;
+  --kt-error: #E3473A;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer utilities {
+  /* Signature Shape Utility: Button Top-Right Cut (10px) */
+  .clip-button-tr {
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+
+  /* Signature Shape Utility: Card Top-Left Cut (16px) */
+  .clip-card-tl {
+    clip-path: polygon(16px 0, 100% 0, 100% 100%, 0 100%, 0 16px);
+  }
+
+  /* Outline Border Wrapper for Clipped Cards */
+  .card-clipped-border {
+    position: relative;
+    background-color: var(--kt-fog);
+    padding: 1px;
+    clip-path: polygon(16px 0, 100% 0, 100% 100%, 0 100%, 0 16px);
+  }
+
+  .card-clipped-inner {
+    background-color: var(--kt-white);
+    clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%, 0 15px);
+  }
+
+  /* Outline Border Wrapper for Clipped Buttons */
+  .btn-clipped-secondary-border {
+    position: relative;
+    background-color: var(--kt-ink);
+    padding: 2px;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+
+  .btn-clipped-secondary-inner {
+    background-color: var(--kt-white);
+    color: var(--kt-ink);
+    clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 11px, 100% 100%, 0 100%);
+  }
+
+  /* Infinite Continuous Marquee Ticker (Right to Left: <-) */
+  .animate-marquee-rtl {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: marquee-rtl 30s linear infinite;
+  }
+
+  /* Infinite Continuous Marquee Ticker (Left to Right: ->) */
+  .animate-marquee-ltr {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: marquee-ltr 30s linear infinite;
+  }
+
+  .animate-marquee-rtl:hover,
+  .animate-marquee-ltr:hover,
+  .marquee-hover-pause:hover .animate-marquee-rtl,
+  .marquee-hover-pause:hover .animate-marquee-ltr {
+    animation-play-state: paused !important;
+  }
+
+  /* Marquee Reverse Speed Utility */
+  .animate-marquee-rtl-fast {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: marquee-rtl 20s linear infinite;
+  }
+
+  .animate-marquee-ltr-fast {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: marquee-ltr 20s linear infinite;
+  }
+
+  /* Scrollbar Hide Utility */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--kt-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--kt-slate);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--kt-orange);
+}

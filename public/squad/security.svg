@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Common Gradients & Filters -->
+    <linearGradient id="bgGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="bgGradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5722" />
+      <stop offset="100%" stop-color="#E64A19" />
+    </linearGradient>
+    <linearGradient id="bgGradYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC107" />
+      <stop offset="100%" stop-color="#FFA000" />
+    </linearGradient>
+    <linearGradient id="bgGradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E88E5" />
+      <stop offset="100%" stop-color="#1565C0" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FF8C00" />
+    </linearGradient>
+    <linearGradient id="ironRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D32F2F" />
+      <stop offset="100%" stop-color="#8E0000" />
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0E0E0" />
+      <stop offset="100%" stop-color="#9E9E9E" />
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D500F9" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#D500F9" stop-opacity="0" />
+    </radialGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  
+  <!-- Background Badge -->
+  <rect width="400" height="400" rx="40" fill="url(#bgGradDark)" />
+  <circle cx="200" cy="200" r="170" fill="url(#purpleGlow)" />
+
+  <g filter="url(#dropShadow)">
+    <!-- Tactical Armor Shoulders -->
+    <path d="M 100 380 Q 200 290 300 380 L 330 400 H 70 Z" fill="#090D16" stroke="#1A1D1D" stroke-width="4" />
+    <!-- Armor Lines -->
+    <path d="M 140 330 L 200 380 L 260 330" stroke="#A855F7" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Cat Head & Ears (Sleek Black Panther Cat) -->
+    <!-- Left Ear -->
+    <path d="M 120 160 L 85 45 L 165 110 Z" fill="#0F172A" stroke="#1A1D1D" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 125 145 L 100 70 L 155 110 Z" fill="#64748B" opacity="0.5" />
+    <!-- Right Ear -->
+    <path d="M 280 160 L 315 45 L 235 110 Z" fill="#0F172A" stroke="#1A1D1D" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 275 145 L 300 70 L 245 110 Z" fill="#64748B" opacity="0.5" />
+
+    <!-- Head Base (Midnight Black Fur) -->
+    <ellipse cx="200" cy="185" rx="88" ry="78" fill="#1E293B" stroke="#1A1D1D" stroke-width="5" />
+
+    <!-- Glowing Purple Cyber Eye Mask & Eyes -->
+    <path d="M 120 160 Q 200 145 280 160 Q 290 200 270 205 Q 200 215 130 205 Q 110 200 120 160 Z" fill="#581C87" opacity="0.7" stroke="#C084FC" stroke-width="3" />
+    
+    <!-- Piercing Neon Cyan Cat Eyes -->
+    <ellipse cx="160" cy="180" rx="14" ry="16" fill="#00E5FF" />
+    <ellipse cx="160" cy="180" rx="4" ry="14" fill="#090D16" />
+    <circle cx="164" cy="174" r="4" fill="#FFFFFF" />
+
+    <ellipse cx="240" cy="180" rx="14" ry="16" fill="#00E5FF" />
+    <ellipse cx="240" cy="180" rx="4" ry="14" fill="#090D16" />
+    <circle cx="244" cy="174" r="4" fill="#FFFFFF" />
+
+    <!-- Nose & Mouth -->
+    <polygon points="200,205 193,197 207,197" fill="#C084FC" stroke="#1A1D1D" stroke-width="2" />
+    <path d="M 190 213 Q 200 221 210 213" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+
+    <!-- Whiskers -->
+    <path d="M 130 210 L 55 195 M 125 220 L 50 220 M 130 230 L 60 240" stroke="#C084FC" stroke-width="3" stroke-linecap="round" />
+    <path d="M 270 210 L 345 195 M 275 220 L 350 220 M 270 230 L 340 240" stroke="#C084FC" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Glowing Cyber Security Shield (Foreground Left) -->
+    <g transform="translate(40, 210)">
+      <path d="M 30 0 L 90 0 L 100 60 Q 60 120 20 100 Q 10 40 30 0 Z" fill="#0F172A" stroke="#00E5FF" stroke-width="4" />
+      <path d="M 40 15 L 80 15 L 88 55 Q 55 95 30 80 Z" fill="url(#cyanGlow)" opacity="0.6" />
+      <!-- Lock Icon on Shield -->
+      <rect x="48" y="45" width="24" height="20" rx="4" fill="#00E5FF" />
+      <path d="M 54 45 V 37 A 6 6 0 0 1 66 37 V 45" fill="none" stroke="#00E5FF" stroke-width="3" />
+    </g>
+  </g>
+
+</svg>

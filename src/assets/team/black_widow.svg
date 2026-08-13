@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Common Gradients & Filters -->
+    <linearGradient id="bgGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="bgGradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5722" />
+      <stop offset="100%" stop-color="#E64A19" />
+    </linearGradient>
+    <linearGradient id="bgGradYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC107" />
+      <stop offset="100%" stop-color="#FFA000" />
+    </linearGradient>
+    <linearGradient id="bgGradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E88E5" />
+      <stop offset="100%" stop-color="#1565C0" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FF8C00" />
+    </linearGradient>
+    <linearGradient id="ironRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D32F2F" />
+      <stop offset="100%" stop-color="#8E0000" />
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0E0E0" />
+      <stop offset="100%" stop-color="#9E9E9E" />
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D500F9" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#D500F9" stop-opacity="0" />
+    </radialGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  
+  <rect width="400" height="400" rx="200" fill="url(#bgGradDark)" />
+
+  <g filter="url(#dropShadow)">
+    <!-- Black Tactical Suit Shoulders -->
+    <path d="M 100 380 Q 200 290 300 380 L 330 400 H 70 Z" fill="#0F172A" stroke="#1A1D1D" stroke-width="4" />
+    <!-- Red Hourglass Symbol -->
+    <polygon points="200,320 215,305 185,305" fill="#DC2626" />
+    <polygon points="200,320 215,335 185,335" fill="#DC2626" />
+
+    <!-- Cat Head & Ears (Sleek Russian Blue Cat Heroine) -->
+    <!-- Left Ear -->
+    <path d="M 120 160 L 85 45 L 165 110 Z" fill="#334155" stroke="#1A1D1D" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 125 145 L 105 75 L 155 110 Z" fill="#F43F5E" opacity="0.6" />
+    <!-- Right Ear -->
+    <path d="M 280 160 L 315 45 L 235 110 Z" fill="#334155" stroke="#1A1D1D" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 275 145 L 295 75 L 245 110 Z" fill="#F43F5E" opacity="0.6" />
+
+    <!-- Head Base -->
+    <ellipse cx="200" cy="185" rx="88" ry="78" fill="#475569" stroke="#1A1D1D" stroke-width="5" />
+
+    <!-- Piercing Emerald Green Eyes -->
+    <ellipse cx="160" cy="180" rx="14" ry="16" fill="#10B981" stroke="#1A1D1D" stroke-width="2" />
+    <ellipse cx="160" cy="180" rx="4" ry="14" fill="#090D16" />
+    <circle cx="164" cy="174" r="4" fill="#FFFFFF" />
+
+    <ellipse cx="240" cy="180" rx="14" ry="16" fill="#10B981" stroke="#1A1D1D" stroke-width="2" />
+    <ellipse cx="240" cy="180" rx="4" ry="14" fill="#090D16" />
+    <circle cx="244" cy="174" r="4" fill="#FFFFFF" />
+
+    <!-- Nose & Mouth -->
+    <polygon points="200,205 193,197 207,197" fill="#E11D48" stroke="#1A1D1D" stroke-width="2" />
+    <path d="M 190 215 Q 200 223 210 215" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+
+    <!-- Whiskers -->
+    <path d="M 130 210 L 55 195 M 125 220 L 50 220 M 130 230 L 60 240" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 270 210 L 345 195 M 275 220 L 350 220 M 270 230 L 340 240" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+
+    <!-- Electric Shock Batons (Foreground Sides) -->
+    <g transform="translate(40, 180) rotate(25)">
+      <rect x="0" y="0" width="12" height="120" rx="4" fill="#00E5FF" stroke="#1A1D1D" stroke-width="3" />
+    </g>
+    <g transform="translate(340, 180) rotate(-25)">
+      <rect x="0" y="0" width="12" height="120" rx="4" fill="#00E5FF" stroke="#1A1D1D" stroke-width="3" />
+    </g>
+  </g>
+
+</svg>

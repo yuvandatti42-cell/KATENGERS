@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Common Gradients & Filters -->
+    <linearGradient id="bgGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="bgGradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5722" />
+      <stop offset="100%" stop-color="#E64A19" />
+    </linearGradient>
+    <linearGradient id="bgGradYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC107" />
+      <stop offset="100%" stop-color="#FFA000" />
+    </linearGradient>
+    <linearGradient id="bgGradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E88E5" />
+      <stop offset="100%" stop-color="#1565C0" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FF8C00" />
+    </linearGradient>
+    <linearGradient id="ironRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D32F2F" />
+      <stop offset="100%" stop-color="#8E0000" />
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0E0E0" />
+      <stop offset="100%" stop-color="#9E9E9E" />
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D500F9" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#D500F9" stop-opacity="0" />
+    </radialGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  
+  <!-- Background Badge -->
+  <rect width="400" height="400" rx="40" fill="url(#bgGradYellow)" />
+  <circle cx="200" cy="200" r="170" fill="#FFFBEB" opacity="0.4" />
+  
+  <g filter="url(#dropShadow)">
+    <!-- Torso / Designer Apron/Jacket -->
+    <path d="M 110 380 Q 200 300 290 380 L 320 400 H 80 Z" fill="#1E293B" stroke="#1A1D1D" stroke-width="4" />
+    <path d="M 160 330 L 200 370 L 240 330" stroke="#FF5722" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Cat Head & Ears (Cool Calico / Orange-White Adult Cat) -->
+    <!-- Left Ear -->
+    <path d="M 120 170 L 85 55 L 165 120 Z" fill="#D97706" stroke="#1A1D1D" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 125 155 L 100 80 L 155 120 Z" fill="#FFEDD5" />
+    <!-- Right Ear -->
+    <path d="M 280 170 L 315 55 L 235 120 Z" fill="#B45309" stroke="#1A1D1D" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 275 155 L 300 80 L 245 120 Z" fill="#FFEDD5" />
+
+    <!-- Head Base -->
+    <ellipse cx="200" cy="195" rx="88" ry="78" fill="#F59E0B" stroke="#1A1D1D" stroke-width="5" />
+    <!-- White Face Patch -->
+    <path d="M 160 170 Q 200 130 240 170 Q 260 230 200 265 Q 140 230 160 170 Z" fill="#FFFFFF" />
+
+    <!-- Cool Glasses (Round Artist Specs) -->
+    <circle cx="160" cy="180" r="30" fill="none" stroke="#1A1D1D" stroke-width="5" />
+    <circle cx="160" cy="180" r="26" fill="#00E5FF" opacity="0.25" />
+    <circle cx="240" cy="180" r="30" fill="none" stroke="#1A1D1D" stroke-width="5" />
+    <circle cx="240" cy="180" r="26" fill="#00E5FF" opacity="0.25" />
+    <line x1="190" y1="180" x2="210" y2="180" stroke="#1A1D1D" stroke-width="5" />
+
+    <!-- Eyes (Focused Confident Expression) -->
+    <ellipse cx="160" cy="180" rx="12" ry="15" fill="#1E293B" />
+    <circle cx="164" cy="174" r="4" fill="#FFFFFF" />
+    <ellipse cx="240" cy="180" rx="12" ry="15" fill="#1E293B" />
+    <circle cx="244" cy="174" r="4" fill="#FFFFFF" />
+
+    <!-- Nose & Mouth -->
+    <polygon points="200,210 192,200 208,200" fill="#F43F5E" stroke="#1A1D1D" stroke-width="2" />
+    <path d="M 190 218 Q 200 226 210 218" fill="none" stroke="#1A1D1D" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Whiskers -->
+    <path d="M 130 215 L 60 205 M 125 225 L 55 225 M 130 235 L 65 245" stroke="#1A1D1D" stroke-width="3" stroke-linecap="round" />
+    <path d="M 270 215 L 340 205 M 275 225 L 345 225 M 270 235 L 335 245" stroke="#1A1D1D" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Paw holding Glowing Stylus Pencil -->
+    <g transform="translate(230, 270)">
+      <path d="M 0 40 L 40 -30 L 60 -10 L 20 60 Z" fill="#EC4899" stroke="#1A1D1D" stroke-width="3" />
+      <polygon points="40,-30 60,-10 70,-25" fill="#00E5FF" stroke="#1A1D1D" stroke-width="2" />
+      <!-- Cat Paw -->
+      <circle cx="5" cy="45" r="22" fill="#F59E0B" stroke="#1A1D1D" stroke-width="4" />
+      <circle cx="-2" cy="35" r="6" fill="#FFFFFF" />
+      <circle cx="12" cy="35" r="6" fill="#FFFFFF" />
+    </g>
+  </g>
+
+  <!-- Floating UI Color Palettes & Widgets -->
+  <rect x="40" y="100" width="50" height="80" rx="10" fill="#FFFFFF" stroke="#1A1D1D" stroke-width="3" />
+  <circle cx="65" cy="120" r="10" fill="#FF5722" />
+  <circle cx="65" cy="145" r="10" fill="#FFC107" />
+  <circle cx="65" cy="165" r="7" fill="#00E5FF" />
+
+</svg>

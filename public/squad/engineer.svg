@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Common Gradients & Filters -->
+    <linearGradient id="bgGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="bgGradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5722" />
+      <stop offset="100%" stop-color="#E64A19" />
+    </linearGradient>
+    <linearGradient id="bgGradYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC107" />
+      <stop offset="100%" stop-color="#FFA000" />
+    </linearGradient>
+    <linearGradient id="bgGradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E88E5" />
+      <stop offset="100%" stop-color="#1565C0" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#FF8C00" />
+    </linearGradient>
+    <linearGradient id="ironRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D32F2F" />
+      <stop offset="100%" stop-color="#8E0000" />
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0E0E0" />
+      <stop offset="100%" stop-color="#9E9E9E" />
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D500F9" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#D500F9" stop-opacity="0" />
+    </radialGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  
+  <!-- Background Badge -->
+  <rect width="400" height="400" rx="40" fill="url(#bgGradOrange)" />
+  <circle cx="200" cy="200" r="170" fill="#1A1D1D" opacity="0.3" />
+
+  <g filter="url(#dropShadow)">
+    <!-- Ninja Suit Body -->
+    <path d="M 110 380 Q 200 290 290 380 L 320 400 H 80 Z" fill="#0F172A" stroke="#1A1D1D" stroke-width="4" />
+    <!-- V-Strap Armor -->
+    <path d="M 140 330 L 200 390 L 260 330" stroke="#FF5722" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Cat Head & Ears (Ginger Tiger Ninja Cat) -->
+    <!-- Left Ear -->
+    <path d="M 115 165 L 75 45 L 160 115 Z" fill="#EA580C" stroke="#1A1D1D" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 120 150 L 90 70 L 150 115 Z" fill="#FFEDD5" />
+    <!-- Right Ear -->
+    <path d="M 285 165 L 325 45 L 240 115 Z" fill="#EA580C" stroke="#1A1D1D" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 280 150 L 310 70 L 250 115 Z" fill="#FFEDD5" />
+
+    <!-- Head Base (Tiger Stripes) -->
+    <ellipse cx="200" cy="190" rx="90" ry="80" fill="#F97316" stroke="#1A1D1D" stroke-width="5" />
+    <!-- Tiger Stripes on forehead -->
+    <path d="M 185 125 L 200 145 L 215 125 M 170 140 L 190 155 M 230 140 L 210 155" stroke="#7C2D12" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Ninja Headband (Orange/Red tied with fluttering tails) -->
+    <path d="M 110 155 Q 200 140 290 155 L 295 175 Q 200 160 105 175 Z" fill="#EF4444" stroke="#1A1D1D" stroke-width="4" />
+    <path d="M 290 165 Q 340 150 370 170 Q 330 180 295 175 Z" fill="#EF4444" stroke="#1A1D1D" stroke-width="3" />
+
+    <!-- Sharp Intense Eyes -->
+    <polygon points="135,185 175,190 140,205" fill="#FEF08A" stroke="#1A1D1D" stroke-width="3" />
+    <ellipse cx="155" cy="194" rx="4" ry="8" fill="#1A1D1D" />
+    <polygon points="265,185 225,190 260,205" fill="#FEF08A" stroke="#1A1D1D" stroke-width="3" />
+    <ellipse cx="245" cy="194" rx="4" ry="8" fill="#1A1D1D" />
+
+    <!-- Mask Covering lower face -->
+    <path d="M 120 210 Q 200 240 280 210 Q 270 275 200 275 Q 130 275 120 210 Z" fill="#1E293B" stroke="#1A1D1D" stroke-width="4" />
+
+    <!-- Whiskers poking through mask -->
+    <path d="M 115 225 L 45 210 M 110 240 L 40 235" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 285 225 L 355 210 M 290 240 L 360 235" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" />
+
+    <!-- Glowing Cyber Energy Katana / Dagger in Paw -->
+    <g transform="translate(60, 240) rotate(-35)">
+      <rect x="0" y="0" width="14" height="150" rx="4" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2" />
+      <rect x="-10" y="140" width="34" height="10" rx="2" fill="#1E293B" stroke="#1A1D1D" stroke-width="2" />
+      <rect x="-4" y="150" width="22" height="40" fill="#F97316" stroke="#1A1D1D" stroke-width="2" />
+    </g>
+  </g>
+
+</svg>
