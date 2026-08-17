@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Badge from './Badge';
 import Button from './Button';
-import { Send, CheckCircle2, AlertCircle, PhoneCall, Mail, MapPin } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, PhoneCall, Mail, Linkedin, Instagram } from 'lucide-react';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -64,26 +64,33 @@ export default function ContactSection() {
 
             {/* Direct Contact Info */}
             <div className="space-y-4 font-body text-sm text-kt-fog w-full pt-6 border-t border-kt-slate/40">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-kt-yellow/20 text-kt-yellow flex items-center justify-center">
+              <a href="mailto:katengerstech@gmail.com" className="flex items-center gap-3 hover:text-kt-yellow transition-colors group">
+                <div className="w-8 h-8 rounded-full bg-kt-yellow/20 text-kt-yellow group-hover:bg-kt-yellow group-hover:text-kt-ink flex items-center justify-center transition-all duration-300">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span>hello@katengers.com</span>
-              </div>
+                <span>katengerstech@gmail.com</span>
+              </a>
 
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-kt-yellow/20 text-kt-yellow flex items-center justify-center">
+              <a href="tel:+919347340238" className="flex items-center gap-3 hover:text-kt-yellow transition-colors group">
+                <div className="w-8 h-8 rounded-full bg-kt-yellow/20 text-kt-yellow group-hover:bg-kt-yellow group-hover:text-kt-ink flex items-center justify-center transition-all duration-300">
                   <PhoneCall className="w-4 h-4" />
                 </div>
-                <span>+91 98765 43210</span>
-              </div>
+                <span>+91 93473 40238</span>
+              </a>
 
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-kt-yellow/20 text-kt-yellow flex items-center justify-center">
-                  <MapPin className="w-4 h-4" />
+              <a href="https://www.linkedin.com/in/katengers-technologies-91b93742a/" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-kt-yellow transition-colors group">
+                <div className="w-8 h-8 rounded-full bg-kt-yellow/20 text-kt-yellow group-hover:bg-kt-yellow group-hover:text-kt-ink flex items-center justify-center transition-all duration-300">
+                  <Linkedin className="w-4 h-4" />
                 </div>
-                <span>Bengaluru, India & Remote Global</span>
-              </div>
+                <span>LinkedIn — Katengers Technologies</span>
+              </a>
+
+              <a href="https://www.instagram.com/katengers_/" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-kt-yellow transition-colors group">
+                <div className="w-8 h-8 rounded-full bg-kt-yellow/20 text-kt-yellow group-hover:bg-kt-yellow group-hover:text-kt-ink flex items-center justify-center transition-all duration-300">
+                  <Instagram className="w-4 h-4" />
+                </div>
+                <span>Instagram — @katengers_</span>
+              </a>
             </div>
 
             {/* Response Time Guarantee Box */}
