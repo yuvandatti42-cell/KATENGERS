@@ -5,6 +5,7 @@ import { IndianRupee, Code2, Wrench, Scaling, ShieldCheck, ChevronLeft, ChevronR
 export default function WhyUsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const pillars = [
     {
@@ -74,16 +75,7 @@ export default function WhyUsSection() {
     }
   ];
 
-  // Auto-play 3D Carousel sliding right to left
-  useEffect(() => {
-    if (isPaused) return;
 
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % pillars.length);
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, [isPaused, pillars.length]);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % pillars.length);
@@ -93,27 +85,32 @@ export default function WhyUsSection() {
     setActiveIndex((prev) => (prev - 1 + pillars.length) % pillars.length);
   };
 
+  const handleTabClick = (index) => {
+    setActiveIndex(index);
+    setIsExpanded(false);
+  };
+
+  const activePillar = pillars[activeIndex];
+  const ActiveIcon = activePillar.icon;
+
   return (
-    <section id="why-us" className="py-20 md:py-32 bg-kt-cream relative border-t border-kt-fog overflow-hidden">
+    <section id="why-us" className="py-12 md:py-32 bg-kt-cream relative border-t border-kt-fog overflow-hidden">
       {/* Background Accent Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1d1d06_1px,transparent_1px),linear-gradient(to_bottom,#1a1d1d06_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <Badge variant="outline" className="mb-4">WHY KATENGERS</Badge>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-kt-ink tracking-tight mb-4">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-6 md:mb-14">
+          <Badge variant="outline" className="mb-3 md:mb-4">WHY KATENGERS</Badge>
+          <h2 className="font-display font-bold text-[26px] sm:text-4xl lg:text-5xl text-kt-ink tracking-tight mb-3">
             Engineered differently than typical software agencies.
           </h2>
-          <p className="font-body text-kt-slate text-base sm:text-lg leading-relaxed">
-            We bridge the gap between expensive enterprise consultancies and fragile off-the-shelf software wrappers.
-          </p>
         </div>
 
-        {/* Top Service Navigation Tabs */}
+        {/* Top Service Navigation Selector - Compact & Scrollable on Mobile */}
         <div 
-          className="flex overflow-x-auto pb-3 pt-1 scrollbar-hide sm:flex-wrap sm:justify-center gap-2 mb-8 sm:mb-12 w-full justify-start snap-x px-1"
+          className="flex overflow-x-auto pb-3 pt-1 scrollbar-hide gap-2 w-full justify-start snap-x px-4 md:px-1 h-12 md:h-auto items-center md:flex-wrap md:justify-center mb-6 md:mb-12"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onPointerEnter={() => setIsPaused(true)}
@@ -125,30 +122,89 @@ export default function WhyUsSection() {
             return (
               <button
                 key={pillar.step}
-                onClick={() => setActiveIndex(index)}
-                className={`px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl font-display text-xs sm:text-sm font-bold flex items-center gap-2 shrink-0 snap-start transition-all duration-300 ${
+                id={`pillar-tab-${index}`}
+                onClick={() => handleTabClick(index)}
+                className={`px-3.5 py-2 text-xs h-9 md:h-auto md:px-4 md:py-3 md:text-sm rounded-full md:rounded-xl font-display font-bold flex items-center gap-1.5 md:gap-2 shrink-0 snap-start transition-all duration-300 ${
                   isActive 
-                    ? 'bg-kt-ink text-kt-white shadow-lg scale-105 ring-2 ring-kt-orange/40' 
-                    : 'bg-kt-white/80 text-kt-slate hover:bg-kt-white hover:text-kt-ink border border-kt-fog'
+                    ? 'bg-kt-ink text-kt-white shadow-md border border-kt-orange md:border-transparent md:scale-105 md:ring-2 md:ring-kt-orange/40' 
+                    : 'bg-kt-white text-kt-slate hover:bg-kt-white hover:text-kt-ink border border-kt-fog'
                 }`}
               >
-                <TabIcon className={`w-4 h-4 ${isActive ? 'text-kt-yellow' : 'text-kt-slate'}`} />
+                <TabIcon className={`w-3.5 h-3.5 md:w-4 md:h-4 ${isActive ? 'text-kt-yellow' : 'text-kt-slate'}`} />
                 <span>{pillar.step}. {pillar.title}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Main 3D Right-to-Left Perspective Carousel Stage */}
+        {/* ========================================================================= */}
+        {/* MOBILE ACTIVE PILLAR CARD (Visible only on mobile)                        */}
+        {/* ========================================================================= */}
+        <div className="block md:hidden w-full mb-4 relative z-10 px-2">
+          <div className="p-5 border border-kt-orange/30 bg-kt-white rounded-2xl shadow-sm w-full h-auto flex flex-col transition-all duration-300">
+            
+            {/* Top Card Header */}
+            <div className="flex items-center gap-3 mb-3 pb-3 border-b border-kt-fog/80">
+              <div className="w-9 h-9 rounded-lg bg-kt-yellow/30 text-kt-ink flex items-center justify-center shadow-sm shrink-0">
+                <ActiveIcon className="w-5 h-5 stroke-[2.2]" />
+              </div>
+              <div>
+                <span className="font-mono text-[9px] uppercase font-bold tracking-widest text-kt-orange block">
+                  PILLAR {activePillar.step} • {activePillar.badge}
+                </span>
+                <h3 className="font-display font-bold text-[20px] text-kt-ink leading-tight">
+                  {activePillar.title}
+                </h3>
+              </div>
+            </div>
+
+            {/* Short Description */}
+            <p className="font-body text-kt-slate text-[14px] font-semibold mb-2.5 leading-snug">
+              {activePillar.subtitle}
+            </p>
+
+            {/* Divider */}
+            <div className="border-t border-kt-fog/60 my-2.5" />
+
+            {/* Main Explanation with Expandable Text */}
+            <div className="mb-3">
+              <p className={`font-body text-kt-slate text-[15px] leading-[1.5] transition-all duration-300 ${isExpanded ? '' : 'line-clamp-2'}`}>
+                {activePillar.description}
+              </p>
+              
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-kt-orange hover:text-[#E05E1F] font-mono text-[11px] font-bold mt-1.5 focus:outline-none transition-colors"
+              >
+                {isExpanded ? 'Read less −' : 'Read more +'}
+              </button>
+            </div>
+
+            {/* Key Benefits Checklist */}
+            <div className="space-y-2 pt-3 border-t border-kt-fog/40">
+              {activePillar.highlights.map((highlight, hIdx) => (
+                <div key={hIdx} className="flex items-start gap-2 font-body text-[13px] leading-[1.4] text-kt-ink font-medium">
+                  <span className="text-kt-orange text-sm shrink-0 leading-none">✓</span>
+                  <span>{highlight}</span>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* DESKTOP 3D CAROUSEL STAGE (Visible only on desktop)                       */}
+        {/* ========================================================================= */}
         <div 
-          className="relative max-w-4xl mx-auto perspective-[1200px] py-2 sm:py-4"
+          className="hidden md:block relative max-w-4xl mx-auto perspective-[1200px] py-4"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onPointerEnter={() => setIsPaused(true)}
           onPointerLeave={() => setIsPaused(false)}
         >
           {/* Card Container Stage */}
-          <div className="relative min-h-[440px] sm:min-h-[380px] flex items-center justify-center">
+          <div className="relative min-h-[380px] flex items-center justify-center">
             {pillars.map((pillar, idx) => {
               const offset = (idx - activeIndex + pillars.length) % pillars.length;
 
@@ -159,43 +215,45 @@ export default function WhyUsSection() {
                 cardStyle = "opacity-100 z-30 scale-100 translate-x-0 rotate-y-0 shadow-2xl border-kt-orange/50 bg-kt-white cursor-default";
               } else if (offset === 1 || (activeIndex === pillars.length - 1 && idx === 0)) {
                 // Next Card (Sliding in from Right with 3D Depth)
-                cardStyle = "opacity-40 z-20 scale-90 translate-x-[35%] rotate-y-[-15deg] hidden sm:flex border-kt-fog bg-kt-white/90 cursor-pointer hover:opacity-70";
+                cardStyle = "opacity-40 z-20 scale-90 translate-x-[35%] rotate-y-[-15deg] border-kt-fog bg-kt-white/90 cursor-pointer hover:opacity-70";
               } else if (offset === pillars.length - 1) {
                 // Previous Card (Sliding out to Left with 3D Depth)
-                cardStyle = "opacity-40 z-10 scale-90 -translate-x-[35%] rotate-y-[15deg] hidden sm:flex border-kt-fog bg-kt-white/90 cursor-pointer hover:opacity-70";
+                cardStyle = "opacity-40 z-10 scale-90 -translate-x-[35%] rotate-y-[15deg] border-kt-fog bg-kt-white/90 cursor-pointer hover:opacity-70";
               }
 
-              const Icon = pillar.icon;
+              const CardIcon = pillar.icon;
 
               return (
                 <div
                   key={pillar.step}
                   onClick={() => offset !== 0 && setActiveIndex(idx)}
-                  className={`absolute inset-0 w-full border rounded-2xl p-6 sm:p-10 transition-all duration-700 ease-out flex flex-col justify-between ${cardStyle}`}
+                  className={`absolute inset-0 w-full border rounded-2xl p-10 transition-all duration-700 ease-out flex flex-col justify-between ${cardStyle}`}
                   style={{
                     transformStyle: 'preserve-3d',
                   }}
                 >
                   <div>
                     {/* Top Pillar Header Bar */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-4 border-b border-kt-fog/80">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-kt-yellow/30 text-kt-ink flex items-center justify-center shadow-sm">
-                          <Icon className="w-6 h-6 stroke-[2.2]" />
-                        </div>
-                        <div>
-                          <span className="font-mono text-[10px] uppercase font-bold tracking-widest text-kt-orange">
-                            PILLAR {pillar.step} • {pillar.badge}
-                          </span>
-                          <h3 className="font-display font-bold text-2xl sm:text-3xl text-kt-ink">
-                            {pillar.title}
-                          </h3>
+                    <div className="flex flex-col gap-2 mb-4 pb-4 border-b border-kt-fog/80">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 rounded-xl bg-kt-yellow/30 text-kt-ink flex items-center justify-center shadow-sm shrink-0">
+                            <CardIcon className="w-6 h-6 stroke-[2.2]" />
+                          </div>
+                          <div>
+                            <span className="font-mono text-[10px] uppercase font-bold tracking-widest text-kt-orange block">
+                              PILLAR {pillar.step} • {pillar.badge}
+                            </span>
+                            <h3 className="font-display font-bold text-2xl lg:text-3xl text-kt-ink">
+                              {pillar.title}
+                            </h3>
+                          </div>
                         </div>
                       </div>
 
-                      <span className="font-mono text-xs text-kt-slate font-semibold bg-kt-cream px-3 py-1 rounded-full border border-kt-fog">
+                      <p className="font-mono text-xs text-kt-slate font-semibold mt-1">
                         {pillar.subtitle}
-                      </span>
+                      </p>
                     </div>
 
                     {/* Pillar Description */}
@@ -228,10 +286,10 @@ export default function WhyUsSection() {
             })}
           </div>
 
-          {/* Left & Right 3D Controls */}
+          {/* Left & Right 3D Controls (Desktop only) */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 sm:-left-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-kt-ink hover:bg-kt-orange text-kt-white flex items-center justify-center transition-all duration-200 shadow-xl active:scale-95"
+            className="flex absolute -left-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-kt-ink hover:bg-kt-orange text-kt-white items-center justify-center transition-all duration-200 shadow-xl active:scale-95"
             aria-label="Previous 3D Slide"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -239,16 +297,15 @@ export default function WhyUsSection() {
 
           <button
             onClick={handleNext}
-            className="absolute right-2 sm:-right-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-kt-ink hover:bg-kt-orange text-kt-white flex items-center justify-center transition-all duration-200 shadow-xl active:scale-95"
+            className="flex absolute -right-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-kt-ink hover:bg-kt-orange text-kt-white items-center justify-center transition-all duration-200 shadow-xl active:scale-95"
             aria-label="Next 3D Slide"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
-
         </div>
 
-        {/* 3D Carousel Progress Dots & Auto-Play Caption */}
-        <div className="mt-8 flex flex-col items-center gap-3">
+        {/* 3D Carousel Progress Dots & Auto-Play Caption (Desktop only) */}
+        <div className="hidden md:flex flex-col items-center gap-3 mt-8">
           <div className="flex items-center gap-2">
             {pillars.map((_, dotIdx) => (
               <button
@@ -263,9 +320,8 @@ export default function WhyUsSection() {
               />
             ))}
           </div>
-          <span className="font-mono text-xs text-kt-slate flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-kt-orange animate-ping" />
-            <span>∞ 3D Right-to-Left Slide Carousel • Hover to pause ∞</span>
+          <span className="font-mono text-[10px] tracking-widest text-kt-slate uppercase font-bold">
+            Interactive 3D Perspective Carousel
           </span>
         </div>
 

@@ -131,7 +131,7 @@ export default function ValuePropSection({ onContactClick }) {
         >
           
           {/* Main 3D Card Stage */}
-          <div className="relative min-h-[420px] sm:min-h-[380px] flex items-center justify-center">
+          <div className="relative min-h-[560px] xs:min-h-[490px] sm:min-h-[380px] flex items-center justify-center">
             {comparisons.map((item, idx) => {
               // Calculate 3D Offset position relative to activeIndex
               const offset = (idx - activeIndex + comparisons.length) % comparisons.length;
@@ -237,10 +237,10 @@ export default function ValuePropSection({ onContactClick }) {
             })}
           </div>
 
-          {/* Floating Left & Right Navigation Arrows */}
+          {/* Floating Left & Right Navigation Arrows (Desktop only) */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 sm:-left-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-kt-slate/40 border border-kt-slate/60 hover:bg-kt-orange hover:border-kt-orange text-kt-white flex items-center justify-center backdrop-blur-lg transition-all duration-200 shadow-xl active:scale-95"
+            className="hidden sm:flex absolute -left-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-kt-slate/40 border border-kt-slate/60 hover:bg-kt-orange hover:border-kt-orange text-kt-white items-center justify-center backdrop-blur-lg transition-all duration-200 shadow-xl active:scale-95"
             aria-label="Previous 3D Slide"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -248,7 +248,7 @@ export default function ValuePropSection({ onContactClick }) {
 
           <button
             onClick={handleNext}
-            className="absolute right-2 sm:-right-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-kt-slate/40 border border-kt-slate/60 hover:bg-kt-orange hover:border-kt-orange text-kt-white flex items-center justify-center backdrop-blur-lg transition-all duration-200 shadow-xl active:scale-95"
+            className="hidden sm:flex absolute -right-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-kt-slate/40 border border-kt-slate/60 hover:bg-kt-orange hover:border-kt-orange text-kt-white items-center justify-center backdrop-blur-lg transition-all duration-200 shadow-xl active:scale-95"
             aria-label="Next 3D Slide"
           >
             <ChevronRight className="w-6 h-6" />
@@ -258,19 +258,39 @@ export default function ValuePropSection({ onContactClick }) {
 
         {/* 3D Carousel Progress Indicators */}
         <div className="mt-8 flex flex-col items-center gap-3">
-          <div className="flex items-center gap-2">
-            {comparisons.map((_, dotIdx) => (
-              <button
-                key={dotIdx}
-                onClick={() => setActiveIndex(dotIdx)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  activeIndex === dotIdx 
-                    ? 'w-8 bg-kt-yellow' 
-                    : 'w-2.5 bg-kt-slate/50 hover:bg-kt-fog'
-                }`}
-                aria-label={`Go to slide ${dotIdx + 1}`}
-              />
-            ))}
+          <div className="flex items-center gap-4">
+            {/* Mobile-only Previous button */}
+            <button
+              onClick={handlePrev}
+              className="sm:hidden w-8 h-8 rounded-lg bg-kt-slate/40 border border-kt-slate/60 text-kt-white flex items-center justify-center shadow-sm active:scale-90"
+              aria-label="Previous Slide"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center gap-2">
+              {comparisons.map((_, dotIdx) => (
+                <button
+                  key={dotIdx}
+                  onClick={() => setActiveIndex(dotIdx)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    activeIndex === dotIdx 
+                      ? 'w-8 bg-kt-yellow' 
+                      : 'w-2.5 bg-kt-slate/50 hover:bg-kt-fog'
+                  }`}
+                  aria-label={`Go to slide ${dotIdx + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Mobile-only Next button */}
+            <button
+              onClick={handleNext}
+              className="sm:hidden w-8 h-8 rounded-lg bg-kt-slate/40 border border-kt-slate/60 text-kt-white flex items-center justify-center shadow-sm active:scale-90"
+              aria-label="Next Slide"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
           <span className="font-mono text-xs text-kt-slate flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-kt-yellow animate-ping" />

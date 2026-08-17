@@ -19,7 +19,7 @@ export default function WhatWeDoSection({ onContactClick }) {
       number: "01",
       title: "Websites",
       subtitle: "High-Performance Modern Web Presence",
-      description: "Modern, responsive websites designed from scratch to represent your brand, load at lightning speed, and convert casual visitors into loyal customers.",
+      description: "",
       features: [
         "Responsive across Desktop, Tablet & Mobile",
         "SEO Optimized & Fast Page Load Speeds",
@@ -34,7 +34,7 @@ export default function WhatWeDoSection({ onContactClick }) {
       number: "02",
       title: "Custom Web Apps",
       subtitle: "Bespoke Enterprise Software & Backends",
-      description: "Powerful, scalable web applications built strictly around your specific operational workflows, API data backends, and business logic.",
+      description: "",
       features: [
         "100% Owned Proprietary Source Code",
         "Custom Database Architectures & Microservices",
@@ -49,7 +49,7 @@ export default function WhatWeDoSection({ onContactClick }) {
       number: "03",
       title: "UI/UX Design",
       subtitle: "Intuitive & Engaging Digital Interfaces",
-      description: "Engaging user interfaces designed to make complex digital products effortlessly intuitive, delightful to navigate, and visually striking.",
+      description: "",
       features: [
         "User Journey Mapping & Wireframing",
         "Custom Component Design Systems",
@@ -64,7 +64,7 @@ export default function WhatWeDoSection({ onContactClick }) {
       number: "04",
       title: "Performance Optimization",
       subtitle: "Ultra-Fast Load Times & Smooth Responsiveness",
-      description: "Transform sluggish legacy apps into ultra-fast digital experiences through code splitting, image compression, database query tuning, and caching.",
+      description: "",
       features: [
         "Sub-100ms API & Database Query Speeds",
         "Lighthouse Score 95+ Performance Audits",
@@ -79,7 +79,7 @@ export default function WhatWeDoSection({ onContactClick }) {
       number: "05",
       title: "AI Solutions",
       subtitle: "Practical Automation & LLM Integration",
-      description: "Practical AI solutions that help businesses work smarter—automating repetitive tasks, powering intelligent support agents, and unlocking data insights.",
+      description: "",
       features: [
         "Custom RAG & Document Search Engines",
         "Autonomous Background Agent Scripts",
@@ -124,7 +124,7 @@ export default function WhatWeDoSection({ onContactClick }) {
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-kt-ink tracking-tight mb-4">
             Digital solutions, built around your business.
           </h2>
-          <p className="font-body text-kt-slate text-base sm:text-lg leading-relaxed">
+          <p className="hidden sm:block font-body text-kt-slate text-base sm:text-lg leading-relaxed">
             Explore our core services through our interactive showcase below.
           </p>
         </div>
@@ -214,9 +214,11 @@ export default function WhatWeDoSection({ onContactClick }) {
                   {current.title}
                 </h3>
 
-                <p className="font-body text-kt-slate text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
-                  {current.description}
-                </p>
+                {current.description && (
+                  <p className="font-body text-kt-slate text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
+                    {current.description}
+                  </p>
+                )}
 
                 {/* Deliverables Checklist */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-2">

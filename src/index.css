@@ -48,12 +48,33 @@
     background-color: var(--kt-ink);
     padding: 2px;
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+    transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .btn-clipped-secondary-inner {
     background-color: var(--kt-white);
     color: var(--kt-ink);
     clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 11px, 100% 100%, 0 100%);
+    transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-clipped-secondary-border:hover,
+  .btn-clipped-secondary-border:focus-within {
+    background-color: var(--kt-orange);
+  }
+
+  .btn-clipped-secondary-border:hover .btn-clipped-secondary-inner,
+  .btn-clipped-secondary-border:focus-within .btn-clipped-secondary-inner {
+    background-color: var(--kt-orange);
+    color: var(--kt-white);
+  }
+
+  .btn-clipped-secondary-border svg {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-clipped-secondary-border:hover svg {
+    transform: translateX(4px);
   }
 
   /* Infinite Continuous Marquee Ticker (Right to Left: <-) */
@@ -102,6 +123,48 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Load Animations */
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-scale-in {
+    opacity: 0;
+    animation: scale-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 10s ease-in-out infinite;
+  }
+
+  .animate-float-slower {
+    animation: float-slower 15s ease-in-out infinite;
+  }
+
+  .animate-scroll-bounce {
+    animation: scroll-bounce 2s ease-in-out infinite;
+  }
+
+  /* Delays */
+  .delay-75 { animation-delay: 75ms; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-150 { animation-delay: 150ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+  .delay-900 { animation-delay: 900ms; }
+  .delay-1000 { animation-delay: 1000ms; }
 }
 
 @keyframes marquee-rtl {
@@ -138,4 +201,65 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--kt-orange);
+}
+
+/* Redesigned Mobile Hero Animations keyframes */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes float-slower {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(-1deg);
+  }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
 }
