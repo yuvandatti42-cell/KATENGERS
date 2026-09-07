@@ -40,6 +40,9 @@ export default function Footer() {
               <li>
                 <a href="#process" className="hover:text-kt-orange transition-colors">Our Process</a>
               </li>
+              <li>
+                <a href="/sitemap.xml" target="_blank" rel="noreferrer" className="hover:text-kt-orange transition-colors">Sitemap</a>
+              </li>
             </ul>
           </div>
 
@@ -119,6 +122,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-start sm:justify-end gap-4 sm:gap-6 w-full sm:w-auto">
             <a href="#solutions" className="hover:text-kt-orange transition-colors">Privacy Policy</a>
             <a href="#why-us" className="hover:text-kt-orange transition-colors">Terms of Service</a>
+            <a href="/sitemap.xml" target="_blank" rel="noreferrer" className="hover:text-kt-orange transition-colors">Sitemap</a>
             <button
               onClick={scrollToTop}
               className="inline-flex items-center gap-1.5 hover:text-kt-orange transition-colors group ml-auto sm:ml-0"
